@@ -1,0 +1,185 @@
+/* General Styling */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	background-image: url("back.png"); /* Ganti dengan path gambar background Anda */
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+}
+
+/* Header */
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 100px; /* Menyesuaikan padding agar sesuai dengan resolusi */
+}
+
+.logo {
+	width: 200px; /* Sesuaikan ukuran logo */
+}
+
+.nav {
+	display: flex;
+	gap: 40px; /* Jarak antar item navigasi */
+}
+
+.nav-item {
+	width: 150px; /* Ukuran item navigasi */
+}
+
+/* Start Button */
+/* Tombol Start */
+.start-button {
+	width: 200px;
+	cursor: pointer;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	color: rgba(255, 255, 255, 0);
+	text-align: center;
+	font-size: 18px;
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek Mantul dan Popup saat Klik */
+.start-button:active {
+	animation: bouncePopup 0.4s ease-out; /* Menjalankan animasi mantul dan popup */
+	background-color: #00000000; /* Mengubah warna tombol saat klik */
+	box-shadow: 0 0 3px rgba(255, 0, 102, 0.103); /* Efek bayangan lebih besar */
+}
+
+/* Gabungan Animasi Mantul dan Popup */
+@keyframes bouncePopup {
+	0% {
+		transform: scale(1) translateY(0); /* Ukuran normal, posisi normal */
+	}
+	25% {
+		transform: scale(1.1) translateY(-5px); /* Membesar dan bergerak sedikit ke atas */
+	}
+	50% {
+		transform: scale(1) translateY(0); /* Kembali ke ukuran semula dan posisi semula */
+	}
+	75% {
+		transform: scale(1.1) translateY(-3px); /* Bergerak sedikit ke atas lagi */
+	}
+	100% {
+		transform: scale(1) translateY(0); /* Kembali ke ukuran semula dan posisi semula */
+	}
+}
+
+/* Hero Section */
+.hero {
+	position: relative;
+	width: 100%;
+	height: 70vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.main-character {
+	width: 75%; /* Sesuaikan ukuran karakter */
+	animation: floating 2s ease-in-out infinite;
+	position: relative;
+}
+
+/* Floating Animation */
+@keyframes floating {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+/* Footer */
+.footer {
+	display: flex;
+	justify-content: center;
+	gap: 50px;
+	padding: 20px 0;
+}
+
+.footer-icon {
+	width: 50px;
+	cursor: pointer;
+}
+
+/* Responsivitas: Media Query untuk Layar Lebih Kecil (Smartphone) */
+@media (max-width: 768px) {
+	/* Header */
+	.header {
+		padding: 20px 30px;
+		flex-direction: column; /* Menyusun logo dan navigasi secara vertikal */
+		text-align: center;
+	}
+
+	.logo {
+		width: 150px; /* Menyesuaikan ukuran logo */
+	}
+
+	.nav {
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	.nav-item {
+		width: 120px; /* Menyesuaikan ukuran item navigasi */
+	}
+
+	/* Start Button */
+	.start-button {
+		width: 150px;
+		font-size: 16px; /* Menyesuaikan ukuran font pada tombol */
+	}
+
+	/* Hero Section */
+	.hero {
+		height: 50vh; /* Menyesuaikan tinggi hero section di layar kecil */
+	}
+
+	.main-character {
+		width: 100%; /* Menyesuaikan lebar karakter */
+	}
+
+	/* Footer */
+	.footer {
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.footer-icon {
+		width: 40px;
+	}
+}
+
+/* Responsivitas untuk Tablet (Lebih Besar dari Smartphone) */
+@media (max-width: 1024px) {
+	/* Start Button */
+	.start-button {
+		width: 180px; /* Menyesuaikan ukuran tombol */
+	}
+
+	/* Hero Section */
+	.main-character {
+		width: 60%; /* Menyesuaikan ukuran karakter */
+	}
+
+	/* Footer */
+	.footer {
+		gap: 40px;
+	}
+}
